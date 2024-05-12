@@ -1,16 +1,17 @@
 <!-- Nav.vue -->
 
 <template>
-    <nav>
+    <nav :class="{ 'dark-background': darkBg }" id="nav">
         
         <div class="nav-left-content">
             <img src="../assets/cw-logo.png" alt="CW-Logo">
             <div>Cody Wakeford</div>
         </div>
+
         <div class="nav-right-content">
             <a href="#home">Home</a>
             <a href="#about">About Me</a>
-            <a href="#projects"></a>
+            <a href="#projects">Projects</a>
         </div>
     
     </nav>
@@ -29,6 +30,9 @@
 nav img {
     width: 50px;
 }
+nav img:hover {
+    animation: flip 1s;
+}
 nav {
     display: flex;
     justify-content: space-between;
@@ -45,6 +49,7 @@ nav {
     margin-inline: auto;
 
     color: var(--text-primary);
+    transition: background-color 0.5s;
 }
 
 .nav-left-content, .nav-right-content {
@@ -66,6 +71,58 @@ nav a {
     color: var(--text-primary);
 }
 
+#name span {
+    transition: transform 0.3s ease;
+}
 
+#name div:hover {
+    cursor: pointer;
+    animation: bounce 0.3s infinite;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes flip {
+    0% { rotate: 0deg; }
+    100% { rotate: 720deg; }
+}
+
+@media (max-width: 1600px) {
+    .dark-background {
+        background-color: var(--background-primary);
+        
+    }
+}
 </style>
 
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const darkBg = ref(false);
+
+const handleScroll = () => {
+    const navHeight = document.getElementById('nav').offsetHeight;
+    const windowHeight = window.innerHeight *0.75;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition + navHeight > windowHeight) {
+        darkBg.value = true;
+    } else {
+        darkBg.value = false;
+    }
+};
+
+
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
+</script>

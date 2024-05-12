@@ -1,5 +1,5 @@
 <template>
-    <div class="background">
+    <div class="background" id="home">
         <section>
             <div class="header-content">
                 <div class="title">
@@ -47,9 +47,12 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
+
+    text-align: left;
     margin-top: 60vh;
-    width: 1200px;
+    width: 100%;
+    max-width: 800px;
     
     z-index: 2;
     text-shadow:0px 5px 5px rgb(0, 0, 0);

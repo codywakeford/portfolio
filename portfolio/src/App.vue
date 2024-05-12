@@ -1,23 +1,10 @@
 <template>
   <div id="app">
-    
     <router-view/>
   </div>
 </template>
 
-<style>
-
-</style>
-
-<script>
-import Nav from './components/Nav.vue';
-
-export default {
-  components: {
-    Nav
-  }
-};
-</script>
+<script setup></script>
 
 <style>
 #app {
@@ -29,6 +16,5 @@ export default {
 
   display: flex;
   flex-direction: column;
-  
 }
 </style>

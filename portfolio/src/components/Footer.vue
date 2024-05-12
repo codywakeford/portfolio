@@ -1,10 +1,138 @@
 <template>
-    <section>
+    <section id="footerSection">
+        <img ref="rocketRef" class="rocket-image" src="../assets/rocket.png" alt="image of a rocket">
+        <footer >
+            <div class="logo-box"><img src="../assets/cw-logo.png" alt="Logo" class="logo"></div>
+            <div class="left-content">
+                <ul>
+                    <a href="#home" @click="launchOff"><li>Home</li></a>
+                    <a href="#about"><li>About</li></a>
+                    <a href="#projects" ><li>Projects</li></a>
+                </ul>
+            </div>
+            <div class="right-content">Cody Wakeford UI</div>
+        </footer>
     </section>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+
+const rocketRef = ref(null);
+let footerSection;
+
+const launchOff = () => {
+    // Calculate the height of the webpage
+    const pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+    console.log(pageHeight);
+
+    // Translate the rocket image by the height of the webpage
+    if (rocketRef.value) {
+        console.log("true")
+        rocketRef.value.style.transition = 'transform 1.5s'; // Add transition for smooth animation
+        rocketRef.value.style.transform = `translateY(${-pageHeight - 500 }px)`;
+        rocketRef.value.style.zIndex = '500';
+        footerSection.style.overflow = 'visible'
+
+        // Reset the rocket position after the animation //
+        rocketRef.value.addEventListener('transitionend', handleTransitionEnd);
+    }
+};
+
+const handleTransitionEnd = () => {
+    // Reset the transform and z-index properties
+    if (rocketRef.value) {
+        setTimeout(() => {
+            rocketRef.value.style.transition = 'none'; // Remove transition
+            rocketRef.value.style.transform = 'none'; // Reset transform
+            rocketRef.value.style.zIndex = '3'; // Reset z-index
+            footerSection.style.overflow = 'hidden';
+        }, 200); 
+    }
+};
+
+onMounted(() => {
+    footerSection = document.getElementById('footerSection');
+    console.log(footerSection)
+    
+});
 </script>
 
 <style scoped>
+    section {
+        position: relative;
+        overflow: hidden;
+
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+
+        background-color: var(--background-secondary);
+        
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+
+        margin-inline: 50px;
+        padding: 0 50px 0 150px;
+        min-height: 100px;
+        border-radius: 25px;;
+
+        overflow: hidden !important;
+    }
+
+
+/* Logo */
+    .logo-box {
+        position: absolute;
+        left: 75px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+    }
+
+    .logo {
+        height: 50px;
+        transform-origin: center;
+    }
+    .logo:hover {
+        
+        animation: flip 1s;
+    }
+
+/* Rocket */
+    .rocket-image {
+        position: absolute;
+        left: -30px;
+        bottom: -40px;
+        z-index: 3;
+    }
+
+/* Left content items */
+    .left-content ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        position: relative;
+        list-style-type: none;
+        z-index: 5;;
+    }
+
+    .left-content li:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        transform: translateY(-2px);
+        text-shadow: 3px 10px 50px white;
+    }
+
+    @keyframes flip {
+        0% { rotate: 0deg; }
+        100% { rotate: 720deg; }
+    }
 </style>
