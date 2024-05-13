@@ -69,6 +69,13 @@ nav a {
     font-size: 1rem;;
     text-decoration: none;
     color: var(--text-primary);
+    transition: text-shadow 0.3s;
+}
+
+nav a:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    text-shadow: 3px 10px 50px white;
 }
 
 #name span {

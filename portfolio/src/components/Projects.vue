@@ -8,9 +8,14 @@
         <div class="projects-container">
             <h2>Websites</h2>
             <ul>
-                <li>Smash Burger</li>
-                <li>Software Website</li>
                 
+                
+                <li class="software-website">
+                    <a href="https://cody-wakeford-software-website-965b7e042708.herokuapp.com/"  target="_blank">
+                        <p>Software Website</p>
+                        <span>View Project</span>
+                    </a>
+                </li>
                 
                 <li class="gourmai">
                     <a href="https://gourmai.co.uk"  target="_blank">
@@ -98,10 +103,13 @@
         box-shadow: 4px 4px 10px black;
         user-select: none;
         font-weight: 400;
+        transition: box-shadow 0.2s;
     }
     .projects-container ul li:hover {
-        box-shadow: 2px 2px 10px lightblue;
-        
+    box-shadow: -2px -2px 5px lightblue, /* Top-left */
+                2px -2px 5px lightblue,  /* Top-right */
+                -2px 2px 5px lightblue,  /* Bottom-left */
+                2px 2px 5px lightblue;   /* Bottom-right */
     }
 
     .projects-container ul p {
@@ -109,12 +117,14 @@
         bottom: 10px;
         right: 15px;
         font-size: 1.5rem;
+        z-index: 2;
     }
     
-    .gourmai {
+    .projects-container li {
         position: relative;
         overflow: hidden;
     }
+
     .projects-container li::before {
         content: "";
         position: absolute;
@@ -126,20 +136,22 @@
         background-position: center;
         transform: translate(-50%, -50%) rotate(-25deg); 
         transform-origin: center; /* Ensures the rotation happens at the center */
+        z-index: 1;
+    }
+    .software-website::before {
+        background-image: url('../assets/cyan-logo2.png')
     }
     .gourmai::before {
-
         background-image: url('../assets/gourman.png');
-
     }
     .projects-container span {
-        
+        position: relative;
         line-height: 150px; /* Vertical alignment */
         opacity: 0;
         transition: opacity 0.3s ease;
         color: white;
         font-size: 16px;
-        z-index: 3; /* Ensure text is above overlay */
+        z-index: 5; /* Ensure text is above overlay */
         pointer-events: none;
     }
     .projects-container a::after {
@@ -149,15 +161,16 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-        opacity: 0; /* Hide initially */
+        background-color: rgba(0, 0, 0, 0.5); 
+        opacity: 0;
         transition: opacity 0.3s ease-in-out;
-        z-index: 2; /* Above the image, below the text */
+        z-index: 2;
+       
     }
-    .gourmai:hover::after {
+    .projects-container a:hover::after {
         opacity: 1; 
     }
-    .gourmai:hover::after, .gourmai:hover span {
-        opacity: 1; /* Show overlay and text on hover */
+    .projects-container li:hover::after, .projects-container li:hover span {
+        opacity: 1; 
     }
 </style>

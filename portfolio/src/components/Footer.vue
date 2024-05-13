@@ -126,9 +126,8 @@ onMounted(() => {
 
     .left-content li:hover {
         cursor: pointer;
-        text-decoration: underline;
-        transform: translateY(-2px);
-        text-shadow: 3px 10px 50px white;
+        text-shadow: 5px 10px 50px white;
+        transition: text-shadow 0.3s;
     }
 
     @keyframes flip {

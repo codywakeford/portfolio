@@ -18,7 +18,7 @@
 
 
             <div class="skills"> 
-                <h1>Some things I have worked with:</h1>
+                <h1>Some things I work with:</h1>
                 <ul class="tabs-list">
                     <li>HTML</li>
                     <li>CSS</li>
@@ -106,6 +106,8 @@
     box-shadow: 4px 4px 10px black;
     user-select: none;
     font-weight: 400;
+    transition: transform 0.2s, box-shadow 0.3s;
+   
 }
 
 .tabs-list li:hover {
