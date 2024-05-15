@@ -43,7 +43,7 @@
 <style scoped>
 nav img {
     width: 50px;
-    object-fit: cover;
+    
 }
 nav img:hover {
     animation: flip 1s;
@@ -127,7 +127,7 @@ nav a:hover {
     left: -100%;
     top: 0;
     bottom: 0;
-    min-width: 320px;
+    min-width: 280px;
     background-color: rgba(0,0,0,0.5);
     backdrop-filter: blur(50px);
     transition: left 0.3s ease;

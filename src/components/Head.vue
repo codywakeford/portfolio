@@ -60,8 +60,10 @@ section {
 .background {
     background-image: url(../assets/background1.jpg);
     background-size: cover;
-    background-position: top;
+    background-position: center;
     background-attachment: fixed;
+    
+    
 }
 .background::before {
     content: '';
