@@ -119,9 +119,9 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 20px;
 
-    padding: 50px 0;
+    padding: 50px 0 100px 0;
 
     position: fixed;
     left: -100%;
@@ -135,19 +135,30 @@ nav a:hover {
 }
 
 .nav-sidebar a{
-    font-size: 3rem !important;
+    font-size: 2rem !important;
 }
 
 #mobileNav {
     align-items: center;
     justify-content: space-between;
     display: none;
+    max-height: 50px;
+}
+
+#mobileNav img {
+    width: 50px;
+}
+
+#mobileNav div {
+    font-size: 1rem !important;
 }
 #mobileNav button {
+    position: relative;
     background-color: rgba(0,0,0,0);
     color: white;
     border: none;
     font-size: 1.5rem;
+    z-index: 200;
 }
 #mobileNav button:active {
     transform: translate(2px, 2px);
