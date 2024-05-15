@@ -51,7 +51,7 @@ section {
 
     text-align: left;
     position: relative;
-    bottom: -100px;
+    bottom: -0px;
     width: 100%;
     height: 100%;
     max-width: 800px;
