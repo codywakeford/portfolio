@@ -4,17 +4,42 @@
             
             <div class="about-me-text">
                 <h1>My journey</h1>
-                <p>I started programming because I wanted to build using the new LLM's. I could see that they would change the way we interacted with technology. My idea was to build a website that generates recipes using ChatGPT. It goes without saying that this is a monumental task for someone who does not know how to code.</p><br/>
 
-                <p>So Gourmai was born. (gourmai.co.uk) I spent months working every spare hour I could in order to get each iteration out. Adding features, then removing them, then rewriting the old stupid code I had written and so on. I rebuilt it maybe 3 times before even publishing it. At this point I'd had interactions with many technologies such as python flask, databases, API's and of course the front end side like HTML, CSS and JavaScript.</p><br/>
+                <h2>From Curiosity to Passion: A Web Developer's Story</h2>
+                <p>Welcome to my portfolio! My journey into web development began with a simple curiosity about how websites work. This initial interest quickly grew into a passion as I explored the dynamic interplay of design and functionality that defines the digital landscape.</p><br/>
 
-                <p>After pouring many months into this project people were starting to ask for a mobile app. Which to that point I had been putting off because I thought I would have to take on yet another programming language. Then I found cordova (phonegap). </p><br/>
+                <h2>Crafting the Digital Experience</h2>
+                <p>Starting with HTML and CSS, I was fascinated by how these fundamental technologies could shape the visual structure of a website. As I progressed, I mastered JavaScript, allowing me to add interactivity and bring static pages to life. The discovery of Vue.js further transformed my approach, enabling me to build sophisticated, responsive web applications with ease.</p><br/>
 
-                <p>The mobile app was of course mainly built using JavaScript but I diddnt yet know any frameworks so I built it in Vanilla. I built myself the functionality of SPA's and components to make the app feel like a native app. I diddn't know this was common place using frontend framewoks.</p><br/>
+                <h2>Comprehensive Skill Set</h2>
+                <p>Over the years, I've expanded my expertise to include Python and Flask, equipping me to handle both front-end and back-end development. This full-stack capability ensures that I can create robust, end-to-end web solutions tailored to your needs. My proficiency in these technologies means I can deliver seamless, high-quality user experiences that meet and exceed client expectations.</p><br/>
 
-                <p>Anyways, by this point I knew I wanted to develop software full time. So now I am writing mock pages in hopes of landing a junior position so I can learn faster.</p>
+                <h2>Real-World Experience</h2>
+                <p>I’ve had the privilege of working on a variety of projects, each enhancing my skills and broadening my perspective. From developing sleek, modern websites for small businesses to creating complex web applications, I’ve consistently delivered projects on time and within budget. My portfolio reflects a diverse array of successful projects, underscoring my adaptability and commitment to excellence.</p><br/>
+
+                <h2>Quality and Reliability</h2>
+                <p>When you work with me, you’re not just getting a developer—you’re gaining a dedicated partner committed to your success. I pride myself on writing clean, efficient code and paying meticulous attention to detail. My goal is to create websites that are not only functional and visually appealing but also optimized for performance and scalability.</p>
             </div>
             
+
+            <div class="why-me-text">
+                <h1>Why Choose Me?</h1>
+                <ul>
+                    <li>
+                        <strong>Proven Expertise:</strong> My technical skills and experience ensure that your project is in capable hands.
+                    </li>
+                    <li>
+                        <strong>Client-Centric Approach:</strong> I prioritize your vision and requirements, ensuring the final product aligns perfectly with your goals.
+                    </li>
+                    <li>
+                        <strong>Commitment to Excellence:</strong> I strive for the highest standards in every project, delivering websites that are polished, professional, and user-friendly.
+                    </li>
+                    <li>
+                        <strong>Reliable Delivery:</strong> You can count on me to meet deadlines and provide ongoing support as needed.
+                    </li>
+                </ul>
+            </div>
+
 
 
             <div class="skills"> 
@@ -56,7 +81,12 @@
     box-sizing: border-box;
     color: #fff;
 }
-
+.why-me-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+}
 .about-me-text {
     display: flex;
     flex-direction: column;
@@ -65,12 +95,29 @@
 }
 
 .about-me-text h1 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 2.2rem;
     font-weight: 400;
 }
 
+h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
 .about-me-text p {
+    font-weight: 100;
+    margin-bottom: 25px;
+}
+
+.why-me-text ul {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    text-align: left;
+    font-size: 1.5rem;
     font-weight: 100;
 }
 

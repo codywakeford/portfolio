@@ -9,7 +9,13 @@
             <h2>Websites</h2>
             <ul>
                 
-                
+                <li class="zeplin-architecture">
+                    <a href="https://cody-wakeford-website1-4a50ac368339.herokuapp.com/"  target="_blank">
+                        <p>Zeplin Architecture</p>
+                        <span>View Project</span>
+                    </a>
+                </li>
+
                 <li class="software-website">
                     <a href="https://cody-wakeford-software-website-965b7e042708.herokuapp.com/"  target="_blank">
                         <p>Software Website</p>
@@ -138,12 +144,19 @@
         transform-origin: center; /* Ensures the rotation happens at the center */
         z-index: 1;
     }
+
+    .zeplin-architecture::before {
+        background-image: url('../assets/zeplin-logo.png')
+    }
+
     .software-website::before {
         background-image: url('../assets/cyan-logo2.png')
     }
+
     .gourmai::before {
         background-image: url('../assets/gourman.png');
     }
+
     .projects-container span {
         position: relative;
         line-height: 150px; /* Vertical alignment */

@@ -17,16 +17,8 @@
     </nav>
 </template>
 
-<style>
-/* Global */
-:root {
-    --background-primary: rgba(9,19,29,255); /* Deep Navy Blue */
-    --background-secondary: rgba(13,27,42,255); /* Lighter Navy */
-    --text-primary: rgba(220,221,225,255); /* Light Gray */
-    --text-secondary: rgba(136,145,158,255); /* Medium Gray */
-    --accent-color: rgba(144,202,249,255); /* Soft Blue */
-    --highlight-color: rgba(255,203,107,255); /* Warm Yellow */
-}
+<style scoped>
+
 nav img {
     width: 50px;
 }
@@ -50,6 +42,7 @@ nav {
 
     color: var(--text-primary);
     transition: background-color 0.5s;
+    
 }
 
 .nav-left-content, .nav-right-content {
@@ -66,15 +59,16 @@ nav {
     width: 1200px;
 }
 nav a {
-    font-size: 1rem;;
+    font-size: 1.25rem;;
     text-decoration: none;
     color: var(--text-primary);
     transition: text-shadow 0.3s;
+    font-family: var(--font-a);
 }
 
 nav a:hover {
     cursor: pointer;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     text-shadow: 3px 10px 50px white;
 }
 
