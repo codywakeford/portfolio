@@ -15,7 +15,7 @@
             </div>
         </nav>
 
-        <nav style="" id="mobileNav">
+        <nav :class="{ 'dark-background': darkBg }" style="" id="mobileNav">
             <div class="nav-left-content">
                 <img src="../assets/cw-logo.png" alt="CW-Logo">
                 <div>Cody Wakeford</div>
@@ -30,7 +30,7 @@
             </div>
 
             
-            <div class="nav-sidebar" id="sideBar">
+            <div  class="nav-sidebar" id="sideBar">
                 <a href="#home" @click="toggleNav">Home</a>
                 <a href="#about" @click="toggleNav">About Me</a>
                 <a href="#projects" @click="toggleNav">Projects</a>
@@ -43,6 +43,7 @@
 <style scoped>
 nav img {
     width: 50px;
+    object-fit: cover;
 }
 nav img:hover {
     animation: flip 1s;
@@ -111,7 +112,7 @@ nav a:hover {
 
 @media (max-width: 1600px) {
     .dark-background {
-        background-color: var(--background-primary);
+        background-color: var(--background-primary) !important;
     }
 }
 .nav-sidebar {
@@ -130,6 +131,7 @@ nav a:hover {
     background-color: rgba(0,0,0,0.5);
     backdrop-filter: blur(50px);
     transition: left 0.3s ease;
+    z-index: 100;
 }
 
 .nav-sidebar a{
@@ -174,14 +176,15 @@ nav a:hover {
 import { ref, onMounted, onUnmounted, nextTick } from 'vue';
 
 const darkBg = ref(false);
-const showMobileNav = ref(true);
+const showMobileNav = ref(false);
 
 const handleScroll = () => {
     const navHeight = document.getElementById('nav').offsetHeight;
+    const mobileNavHeight = document.getElementById('mobileNav').offsetHeight;
     const windowHeight = window.innerHeight *0.75;
     const scrollPosition = window.scrollY;
 
-    if (scrollPosition + navHeight > windowHeight) {
+    if (scrollPosition + navHeight > windowHeight || scrollPosition + mobileNavHeight > windowHeight) {
         darkBg.value = true;
     } else {
         darkBg.value = false;
