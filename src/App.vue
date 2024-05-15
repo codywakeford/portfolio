@@ -27,4 +27,26 @@
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.1rem !important;
+  }
+
+  p {
+    font-size: 1.2rem !important;
+  }
+
+  li {
+    font-size: 1.2rem !important;
+  }
+
+  a {
+    font-size: 1.2rem !important;
+  }
+}
 </style>
