@@ -1,20 +1,31 @@
 <!-- Nav.vue -->
 
 <template>
-    <nav :class="{ 'dark-background': darkBg }" id="nav">
-        
-        <div class="nav-left-content">
-            <img src="../assets/cw-logo.png" alt="CW-Logo">
-            <div>Cody Wakeford</div>
-        </div>
+    <div>
+        <nav :class="{ 'dark-background': darkBg }" id="nav">
+            <div class="nav-left-content">
+                <img src="../assets/cw-logo.png" alt="CW-Logo">
+                <div>Cody Wakeford</div>
+            </div>
 
-        <div class="nav-right-content">
-            <a href="#home">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-        </div>
-    
-    </nav>
+            <div class="nav-right-content">
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#projects">Projects</a>
+            </div>
+        </nav>
+
+        <nav style="" id="mobileNav">
+            <div class="nav-left-content">
+                <img src="../assets/cw-logo.png" alt="CW-Logo">
+                <div>Cody Wakeford</div>
+            </div>
+
+            <div class="nav-right-content">
+                <button><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </nav>
+    </div>
 </template>
 
 <style scoped>
@@ -96,6 +107,36 @@ nav a:hover {
     .dark-background {
         background-color: var(--background-primary);
         
+    }
+}
+
+#mobileNav {
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+}
+
+#mobileNav button {
+    
+    background-color: rgba(0,0,0,0);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+}
+
+#mobileNav button:active {
+    transform: translate(2px, 2px);
+}
+
+@media (max-width: 680px) {
+    #nav {
+        display: none;
+
+    }
+
+    #mobileNav {
+        display: flex;
+
     }
 }
 </style>
