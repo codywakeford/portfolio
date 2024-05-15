@@ -58,12 +58,26 @@ section {
     text-shadow:0px 5px 5px rgb(0, 0, 0);
 }
 .background {
-    background-image: url(../assets/background1.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    
-    
+    background-image: url('../assets/background1.jpg');
+    background-size: cover !important; /* Ensures the image covers the entire background area */
+    background-position: center !important; /* Centers the background image */
+    background-attachment: fixed !important; /* Keeps the background image fixed during scrolling */
+
+    /* Optional: Vendor prefixes for older browser support */
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+
+    -webkit-background-position: center !important;
+    -moz-background-position: center !important;
+    -o-background-position: center !important;
+    background-position: center !important;
+
+    -webkit-background-attachment: fixed !important;
+    -moz-background-attachment: fixed !important;
+    -o-background-attachment: fixed !important;
+    background-attachment: fixed !important;
 }
 .background::before {
     content: '';
