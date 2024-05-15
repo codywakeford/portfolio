@@ -59,16 +59,16 @@ section {
 }
 .background {
     background-image: url(../assets/background1.jpg);
-    background-size: cover !important;
-    background-position: center !important;
-    background-attachment: fixed !important;
+    background-size: cover ;
+    background-position: center ;
+    background-attachment: fixed ;
     
     
 }
 
 @media (max-width: 600px) {
     .background {
-        background-attachment: scroll;
+        background-attachment: scroll ;
     }
 }
 .background::before {
