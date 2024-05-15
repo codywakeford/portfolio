@@ -50,8 +50,10 @@ section {
     align-items: flex-start;
 
     text-align: left;
-    margin-top: 60vh;
+    position: relative;
+    bottom: -100px;
     width: 100%;
+    height: 100%;
     max-width: 800px;
     
     z-index: 2;
