@@ -33,7 +33,7 @@
             </ul>
         </div>
 
-        <div class="projects-container">
+        <!-- <div class="projects-container">
             <h2>Landing Pages</h2>
             <ul>
                 
@@ -57,7 +57,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> -->
 
     </section>
 </template>

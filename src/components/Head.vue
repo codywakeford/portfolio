@@ -1,11 +1,11 @@
 <template>
     <div class="background" id="home">
         <section>
-            <div class="header-content">
+            <header>
                 <h3>Hello,</h3>
                 <h1>I'm Cody Wakeford</h1>
                 <p>I build full stack web and mobile applications.</p>
-            </div>
+            </header>
         </section>
         
     </div>
@@ -33,7 +33,7 @@ section {
 }
 
 /* Header */
-.header-content {
+header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,12 +50,12 @@ section {
     user-select: none;
 }
 
-.header-content h1 {
+header h1 {
     font-size: 5rem;
     font-weight: bold;
 }
 
-.header-content h3 {
+header h3 {
     font-size: 2rem;
     font-weight: 100;
 }
@@ -69,10 +69,39 @@ section {
     
 }
 
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header h3 {
+        font-size:1.5rem;
+    }
+
+    header p {
+        font-size: 1.25rem;
+    }
+}
+
+
 @media (max-width: 600px) {
     .background {
         background-attachment: scroll ;
     }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header h3 {
+        font-size: 1.25rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
 }
 .background::before {
     content: '';
