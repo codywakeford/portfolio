@@ -2,7 +2,31 @@
     <router-view/>
 </template>
 
-<script setup></script>
+
+<script setup>
+import { onMounted, onUnmounted } from 'vue';
+
+const cursorGlow = document.createElement('div');
+cursorGlow.classList.add('cursor-glow');
+
+const onMouseMove = (e) => {
+  const scrollX = window.scrollX || window.pageXOffset;
+  const scrollY = window.scrollY || window.pageYOffset;
+  cursorGlow.style.transform = `translate(${e.clientX + scrollX}px, ${e.clientY + scrollY}px)`;
+};
+
+onMounted(() => {
+  const appContainer = document.getElementById('app');
+  appContainer.appendChild(cursorGlow);
+  document.addEventListener('mousemove', onMouseMove);
+
+});
+
+onUnmounted(() => {
+  document.removeEventListener('mousemove', onMouseMove);
+  document.body.removeChild(cursorGlow);
+});
+</script>
 
 <style>
 /* Global */
@@ -48,5 +72,28 @@
   a {
     font-size: 1.2rem !important;
   }
+}
+
+
+.cursor-glow {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(52, 78, 199, 1),  /* Bright and large shadow */
+                0 0 100px rgba(52, 78, 199, 0.9),
+                0 0 150px rgba(52, 78, 199, 0.8),
+                0 0 200px rgba(52, 78, 199, 0.7),
+                0 0 250px rgba(52, 78, 199, 0.5),
+                0 0 300px rgba(52, 78, 199, 0.5),
+                0 0 350px rgba(52, 78, 199, 0.5),
+                0 0 400px rgba(52, 78, 199, 0.5),
+                0 0 450px rgba(52, 78, 199, 0.5),
+                0 0 500px rgba(52, 78, 199, 0.5); 
+    pointer-events: none;
+    transform: translate(50%, 50%);
+    transition: transform 0.0000001s ease-out;
+    z-index: 1000000;
 }
 </style>
