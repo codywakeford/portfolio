@@ -43,7 +43,6 @@
 <style scoped>
 nav img {
     width: 50px;
-    
 }
 nav img:hover {
     animation: flip 1s;
@@ -192,7 +191,7 @@ const showMobileNav = ref(false);
 const handleScroll = () => {
     const navHeight = document.getElementById('nav').offsetHeight;
     const mobileNavHeight = document.getElementById('mobileNav').offsetHeight;
-    const windowHeight = window.innerHeight *0.75;
+    const windowHeight = window.innerHeight *0.3;
     const scrollPosition = window.scrollY;
 
     if (scrollPosition + navHeight > windowHeight || scrollPosition + mobileNavHeight > windowHeight) {

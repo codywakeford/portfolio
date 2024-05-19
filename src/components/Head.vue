@@ -2,18 +2,8 @@
     <div class="background" id="home">
         <section>
             <div class="header-content">
-                <div class="title">
-                    <span class="red">H</span>
-                    <span class="green">i</span>
-                    <span class="blue">, </span>
-                    <span class="red">I</span>
-                    <span class="green">'</span>
-                    <span class="red">m </span>
-                    <span class="blue">C</span>
-                    <span class="green">o</span>
-                    <span class="red">d</span>
-                    <span class="blue">y</span>
-                </div>
+                <h3>Hello,</h3>
+                <h1>I'm Cody Wakeford</h1>
                 <p>I build full stack web and mobile applications.</p>
             </div>
         </section>
@@ -46,10 +36,9 @@ section {
 .header-content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 
-    text-align: left;
     position: relative;
     bottom: -0px;
     width: 100%;
@@ -58,9 +47,21 @@ section {
     
     z-index: 2;
     text-shadow:0px 5px 5px rgb(0, 0, 0);
+    user-select: none;
 }
+
+.header-content h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.header-content h3 {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
 .background {
-    background-image: url(../assets/background1.jpg);
+    background-image: url(../assets/background2.jpg);
     background-size: cover ;
     background-position: center ;
     background-attachment: fixed ;
@@ -85,22 +86,6 @@ section {
     background: linear-gradient(to top, var(--background-primary), rgba(0, 0, 0, 0.1));
     z-index: 0;
 }
-.title span {
-    transition: color 0.3s;
-    cursor: pointer;
-}
-.red:hover {
-    color: red;
-    transition: color 0.3s;
-}
 
-.blue:hover {
-    color: blue;
-    transition: color 0.3s;
-}
 
-.green:hover {
-    color: green;
-    transition: color 0.3s;
-}
 </style>
