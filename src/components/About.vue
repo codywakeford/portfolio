@@ -61,13 +61,15 @@
 
 <style scoped>
 
-.about-me-section {
+section {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 50px;
     width: 100%;
+
+    padding: 100px 50px;
 
     box-sizing: border-box;
     color: #fff;

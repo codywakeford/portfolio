@@ -36,7 +36,7 @@ section {
 header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 
     position: relative;
@@ -44,6 +44,7 @@ header {
     width: 100%;
     height: 100%;
     max-width: 800px;
+    margin-bottom: 10%;
     
     z-index: 2;
     text-shadow:0px 5px 5px rgb(0, 0, 0);
@@ -61,7 +62,7 @@ header h3 {
 }
 
 .background {
-    background-image: url(../assets/background2.jpg);
+    background-image: url(../assets/background3.jpg);
     background-size: cover ;
     background-position: center ;
     background-attachment: fixed ;
