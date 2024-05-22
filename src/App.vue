@@ -81,7 +81,7 @@ onUnmounted(() => {
     height: 20px;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 50%;
-    box-shadow: 0 0 50px rgba(52, 78, 199, 1),  /* Bright and large shadow */
+    box-shadow: 0 0 50px rgba(52, 78, 199, 1),
                 0 0 100px rgba(52, 78, 199, 0.9),
                 0 0 150px rgba(52, 78, 199, 0.8),
                 0 0 200px rgba(52, 78, 199, 0.7),
