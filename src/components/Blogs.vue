@@ -65,7 +65,7 @@ header h1 {
     border-radius: 15px;
     max-width: 350px;
     max-height: 600px;
-    min-height: 500px;
+    min-height: 400px;
     overflow: hidden;
     user-select: none;
 

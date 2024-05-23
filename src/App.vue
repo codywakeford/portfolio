@@ -79,6 +79,19 @@ onUnmounted(() => {
   }
 }
 
+@media (max-width: 500px) {
+    p, li {
+      font-size: 1rem !important;
+    }
+
+    h1 {
+      font-size: 1.5rem !important;
+    }
+
+    h2 {
+      font-size: 1rem !important;
+    }
+}
 
 .cursor-glow {
     position: absolute;
