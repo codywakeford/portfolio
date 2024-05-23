@@ -1,5 +1,9 @@
 <template>
-    <router-view/>
+  <router-view v-slot=" { Component }">
+    <transition name="fade" mode="out-in">
+        <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 
@@ -26,6 +30,7 @@ onUnmounted(() => {
   document.removeEventListener('mousemove', onMouseMove);
   document.body.removeChild(cursorGlow);
 });
+
 </script>
 
 <style>
@@ -96,4 +101,15 @@ onUnmounted(() => {
     transition: transform 0.0000001s ease-out;
     z-index: 1000000;
 }
+
+.fade-enter-from, .fade-leave-active {
+    opacity: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.2s ease-out;
+}
+</style>
+
+<style scoped>
 </style>

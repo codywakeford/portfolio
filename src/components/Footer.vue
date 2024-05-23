@@ -1,13 +1,13 @@
 <template>
     <section id="footerSection">
         <img ref="rocketRef" class="rocket-image" src="../assets/rocket.png" alt="image of a rocket">
-        <footer >
+        <footer>
             <div class="logo-box"><img src="../assets/cw-logo.png" alt="Logo" class="logo"></div>
             <div class="left-content">
                 <ul>
-                    <a href="#home" @click="launchOff"><li>Home</li></a>
-                    <a href="#about"><li>About</li></a>
-                    <a href="#projects" ><li>Projects</li></a>
+                    <a @click.prevent="navigateTo('#home')"><li>Home</li></a>
+                    <a @click.prevent="navigateTo('#about')"><li>About Me</li></a>
+                    <a @click.prevent="navigateTo('#projects')"><li>Projects</li></a>
                 </ul>
             </div>
             <div class="right-content">Cody Wakeford UI</div>
@@ -17,6 +17,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+
 
 const rocketRef = ref(null);
 let footerSection;
@@ -56,13 +58,23 @@ onMounted(() => {
     console.log(footerSection)
     
 });
+
+const router = useRouter();
+const route = useRoute();
+
+const navigateTo = (hash) => {
+  if (route.name === 'Home') {
+    document.querySelector(hash).scrollIntoView({ behavior: 'smooth' });
+  } else {
+    router.push({ path: '/', hash });
+  }
+};
 </script>
 
 <style scoped>
     section {
         position: relative;
         overflow: hidden;
-
     }
 
     footer {

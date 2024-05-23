@@ -9,9 +9,9 @@
             </div>
 
             <div class="nav-right-content">
-                <a href="#home">Home</a>
-                <a href="#about">About Me</a>
-                <a href="#projects">Projects</a>
+                <a @click.prevent="navigateTo('#home')">Home</a>
+                <a @click.prevent="navigateTo('#about')">About Me</a>
+                <a @click.prevent="navigateTo('#projects')">Projects</a>
             </div>
         </nav>
 
@@ -184,6 +184,7 @@ nav a:hover {
 
 <script setup>
 import { ref, onMounted, onUnmounted, nextTick } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 
 const darkBg = ref(false);
 const showMobileNav = ref(false);
@@ -212,6 +213,16 @@ const toggleNav = async () => {
     showMobileNav.value = !showMobileNav.value;
 };
 
+const router = useRouter();
+const route = useRoute();
+
+const navigateTo = (hash) => {
+  if (route.name === 'Home') {
+    document.querySelector(hash).scrollIntoView({ behavior: 'smooth' });
+  } else {
+    router.push({ path: '/', hash });
+  }
+};
 
 onMounted(() => {
     window.addEventListener('scroll', handleScroll);

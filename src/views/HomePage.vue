@@ -4,6 +4,7 @@
         <Nav/>
         <Head/>
         <About/>
+        <Blogs />
         <Projects />
         <Footer />
     </main>
@@ -15,6 +16,7 @@ import Head from '../components/Head.vue'
 import About from '../components/About.vue'
 import Projects from '../components/Projects.vue'
 import Footer from '../components/Footer.vue'
+import Blogs from '../components/Blogs.vue'
 
 </script>
 
