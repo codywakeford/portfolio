@@ -39,12 +39,11 @@
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>JavaScript</li>
-                    <li>JQuery</li>
                     <li>Vue.js</li>
                     <li>Python</li>
                     <li>Flask</li>
                     <li>postGresDB</li>
-                    <li>sqlite</li>
+                    <li>SQlite</li>
                     <li>Herkou</li>
                     <li>SEO</li>
                     <li>Cordova Mobile</li>

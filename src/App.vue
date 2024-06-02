@@ -23,11 +23,13 @@ onMounted(() => {
   const appContainer = document.getElementById('app');
   appContainer.appendChild(cursorGlow);
   document.addEventListener('mousemove', onMouseMove);
+  document.removeEventListener('scroll', onMouseMove);
 
 });
 
 onUnmounted(() => {
   document.removeEventListener('mousemove', onMouseMove);
+  document.removeEventListener('scroll', onMouseMove);
   document.body.removeChild(cursorGlow);
 });
 
