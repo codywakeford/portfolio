@@ -4,7 +4,7 @@
     <div>
         <nav :class="{ 'dark-background': darkBg }" id="nav">
             <div class="nav-left-content">
-                <img src="../assets/cw-logo.png" alt="CW-Logo">
+                <a @click.prevent="navigateTo('#home')"><img src="../assets/cw-logo.png" alt="CW-Logo"></a>
                 <div>Cody Wakeford</div>
             </div>
 
@@ -61,6 +61,7 @@ nav {
     margin-inline: auto;
     color: var(--text-primary);
     transition: background-color 0.5s;
+    user-select: none;
 }
 
 .nav-left-content, .nav-right-content {

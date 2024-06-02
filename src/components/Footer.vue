@@ -5,7 +5,7 @@
             <div class="logo-box"><img src="../assets/cw-logo.png" alt="Logo" class="logo"></div>
             <div class="left-content">
                 <ul>
-                    <a @click.prevent="navigateTo('#home')"><li>Home</li></a>
+                    <a @click.prevent="navigateTo('#home')" @click="launchOff"><li>Home</li></a>
                     <a @click.prevent="navigateTo('#about')"><li>About Me</li></a>
                     <a @click.prevent="navigateTo('#projects')"><li>Projects</li></a>
                 </ul>
@@ -75,6 +75,7 @@ const navigateTo = (hash) => {
     section {
         position: relative;
         overflow: hidden;
+        user-select: none;
     }
 
     footer {

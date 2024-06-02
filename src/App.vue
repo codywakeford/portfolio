@@ -16,7 +16,7 @@ cursorGlow.classList.add('cursor-glow');
 const onMouseMove = (e) => {
   const scrollX = window.scrollX || window.pageXOffset;
   const scrollY = window.scrollY || window.pageYOffset;
-  cursorGlow.style.transform = `translate(${e.clientX + scrollX}px, ${e.clientY + scrollY}px)`;
+  cursorGlow.style.transform = `translate(${e.clientX + scrollX - 100}px, ${e.clientY + scrollY -100}px)`;
 };
 
 onMounted(() => {
@@ -95,11 +95,11 @@ onUnmounted(() => {
 
 .cursor-glow {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 200px;
+    height: 200px;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 50%;
-    box-shadow: 0 0 50px rgba(52, 78, 199, 1),
+    /* box-shadow: 0 0 50px rgba(52, 78, 199, 1),
                 0 0 100px rgba(52, 78, 199, 0.9),
                 0 0 150px rgba(52, 78, 199, 0.8),
                 0 0 200px rgba(52, 78, 199, 0.7),
@@ -108,9 +108,12 @@ onUnmounted(() => {
                 0 0 350px rgba(52, 78, 199, 0.5),
                 0 0 400px rgba(52, 78, 199, 0.5),
                 0 0 450px rgba(52, 78, 199, 0.5),
-                0 0 500px rgba(52, 78, 199, 0.5); 
+                0 0 500px rgba(52, 78, 199, 0.5);  */
+    background-color: rgba(52, 78, 199, 1);
+    opacity: 0.8;
     pointer-events: none;
-    transform: translate(50%, 50%);
+    filter: blur(100px);
+    
     transition: transform 0.0000001s ease-out;
     z-index: 1000000;
 }
