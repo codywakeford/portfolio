@@ -8,6 +8,12 @@
         <div class="projects-container">
             <h2>Websites</h2>
             <ul>
+                <li class="the-crown">
+                    <a href="https://thecrownmc.com"  target="_blank">
+                        <p>The Crown MC</p>
+                        <span>View Project</span>
+                    </a>
+                </li>
                 
                 <li class="zeplin-architecture">
                     <a href="https://cody-wakeford-website1-4a50ac368339.herokuapp.com/"  target="_blank">
@@ -146,15 +152,25 @@
     }
 
     .zeplin-architecture::before {
-        background-image: url('../assets/zeplin-logo.png')
+        background-image: url('../assets/zeplin-logo.png');
     }
 
     .software-website::before {
-        background-image: url('../assets/cyan-logo2.png')
+        background-image: url('../assets/cyan-logo2.png');
     }
 
     .gourmai::before {
         background-image: url('../assets/gourman.png');
+
+    }
+
+    .the-crown::before {
+        background-image: url('../assets/the-crown.png');
+        width: 200px !important; 
+        left: 35% !important;
+        background-size: contain !important;
+        background-repeat: no-repeat ;
+    
     }
 
     .projects-container span {
