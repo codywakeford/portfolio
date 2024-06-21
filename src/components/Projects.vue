@@ -9,7 +9,8 @@
             <h2>Websites</h2>
             <ul>
                 <li class="the-crown">
-                    <a href="https://thecrownmc.com"  target="_blank">
+                    <Icon icon="ph:desktop-tower-duotone" class="desktop" width="35"/>
+                    <a href="https://crownmc-667cc12d6323.herokuapp.com/"  target="_blank">
                         <p>The Crown MC</p>
                         <span>View Project</span>
                     </a>
@@ -69,7 +70,7 @@
 </template>
 
 <script setup>
-
+import { Icon } from '@iconify/vue'
 </script>
 
 <style scoped>
@@ -83,7 +84,11 @@
         padding-top: 0;
         padding-bottom: 100px;
     }
-    
+    .desktop {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
     .projects-container {
         
         text-align: left;

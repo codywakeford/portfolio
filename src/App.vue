@@ -13,28 +13,38 @@ import { onMounted, onUnmounted } from 'vue';
 const cursorGlow = document.createElement('div');
 cursorGlow.classList.add('cursor-glow');
 
-const onMouseMove = (e) => {
+let lastMouseX = 0;
+let lastMouseY = 0;
+
+const updateCursorGlowPosition = (x, y) => {
   const scrollX = window.scrollX || window.pageXOffset;
   const scrollY = window.scrollY || window.pageYOffset;
-  cursorGlow.style.transform = `translate(${e.clientX + scrollX - 100}px, ${e.clientY + scrollY -100}px)`;
+  cursorGlow.style.transform = `translate(${x + scrollX - 100}px, ${y + scrollY - 100}px)`;
+};
+
+const onMouseMove = (e) => {
+  lastMouseX = e.clientX;
+  lastMouseY = e.clientY;
+  updateCursorGlowPosition(lastMouseX, lastMouseY);
+};
+
+const onScroll = () => {
+  updateCursorGlowPosition(lastMouseX, lastMouseY);
 };
 
 onMounted(() => {
   const appContainer = document.getElementById('app');
   appContainer.appendChild(cursorGlow);
   document.addEventListener('mousemove', onMouseMove);
-  document.removeEventListener('scroll', onMouseMove);
-
+  document.addEventListener('scroll', onScroll);
 });
 
 onUnmounted(() => {
   document.removeEventListener('mousemove', onMouseMove);
-  document.removeEventListener('scroll', onMouseMove);
+  document.removeEventListener('scroll', onScroll);
   document.body.removeChild(cursorGlow);
 });
-
 </script>
- 
 <style>
 /* Global */
 :root {
@@ -113,11 +123,12 @@ onUnmounted(() => {
                 0 0 500px rgba(52, 78, 199, 0.5);  */
     background-color: rgba(52, 78, 199, 1);
     opacity: 0.8;
+    
     pointer-events: none;
     filter: blur(100px);
     
     transition: transform 0.0000001s ease-out;
-    z-index: 1000000;
+    z-index: 1;
 }
 
 .fade-enter-from, .fade-leave-active {

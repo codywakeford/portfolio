@@ -8,6 +8,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@iconify/vue": "^4.1.2",
     "connect-history-api-fallback": "^2.0.0",
     "core-js": "^3.8.3",
     "express": "^4.19.2",
