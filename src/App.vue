@@ -89,6 +89,9 @@ onUnmounted(() => {
   a {
     font-size: 1.2rem !important;
   }
+  .cursor-glow {
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {
@@ -138,7 +141,4 @@ onUnmounted(() => {
 .fade-enter-active, .fade-leave-active {
     transition: opacity 0.2s ease-out;
 }
-</style>
-
-<style scoped>
 </style>
