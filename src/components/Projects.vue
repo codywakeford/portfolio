@@ -8,6 +8,14 @@
         <div class="projects-container">
             <h2>Websites</h2>
             <ul>
+
+                <li class="brainwave">
+                    <a href="https://brainwavio-47c97b943470.herokuapp.com/"  target="_blank">
+                        <p>Brainwave.io</p>
+                        <span>View Project</span>
+                    </a>
+                </li>
+
                 <li class="the-crown">
                     <Icon icon="ph:desktop-tower-duotone" class="desktop" width="35"/>
                     <a href="https://crownmc-667cc12d6323.herokuapp.com/"  target="_blank">
@@ -167,6 +175,12 @@ import { Icon } from '@iconify/vue'
     .gourmai::before {
         background-image: url('../assets/gourman.png');
 
+    }
+    .brainwave::before {
+        background-image: url('../assets/brainwaveio.png');
+        background-size: contain !important;
+        background-repeat: no-repeat;
+        width: 100px !important;
     }
 
     .the-crown::before {

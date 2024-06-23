@@ -47,6 +47,8 @@ onUnmounted(() => {
 </script>
 <style>
 /* Global */
+
+
 :root {
     --background-primary: rgba(9,19,29,255); /* Deep Navy Blue */    
     --background-secondary: rgba(13,27,42,255); /* Lighter Navy */
@@ -131,7 +133,7 @@ onUnmounted(() => {
     filter: blur(100px);
     
     transition: transform 0.0000001s ease-out;
-    z-index: 1;
+    z-index: 0 !important;
 }
 
 .fade-enter-from, .fade-leave-active {
